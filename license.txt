@@ -1,0 +1,5 @@
+All of this code used the MIT license.
+
+The sprites are all covered by the CC0 licence and are public domain.
+
+The space shooter sheet is by Mumu @ open game art: http://opengameart.org/users/mumu
