@@ -25,7 +25,7 @@ ship_y = screen.get_height()-40
 # Next we need an offset on our sprite sheet. Our sprites are 18x18 and the ship
 # is on the 3rd row and the first column.
 # First lets define some constants for our sprites so we can do some math later
-sprite_width, sprite_height = (36, 36)
+sprite_width, sprite_height = (34, 34)
 
 # Here we are going to calculate a sub rectangle. We know our sprite is on the
 # first column so that's 0 times the sprites width. We know our sprite is on
