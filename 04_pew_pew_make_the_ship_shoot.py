@@ -1,5 +1,5 @@
-# I wont go over the things covered in the last section. If something here is not
-# covered by a comment look back a step.
+# I wont go over the things covered in the last section. If something here is
+# not covered by a comment look back a step.
 
 import pygame
 from pygame.locals import *
@@ -17,11 +17,13 @@ ship_x = screen.get_width() / 2
 ship_y = screen.get_height()-40
 
 sprite_width, sprite_height = (36, 36)
-ship_sprite_area = (0*sprite_width, 2*sprite_height, sprite_width, sprite_height)
+ship_sprite_area = (0*sprite_width, 2*sprite_height,
+                    sprite_width, sprite_height)
 
 # Just like before we are gonna calculate a sub rectangle for the bullet sprite.
 # it is on the 3rd row and the 3rd column. (remember ranges start at 0!!!)
-bullet_sprite_area = (2*sprite_width, 2*sprite_height, sprite_width-4, sprite_height)
+bullet_sprite_area = (2*sprite_width, 2*sprite_height,
+                      sprite_width-4, sprite_height)
 
 
 # Here is our first exposure to the python class
