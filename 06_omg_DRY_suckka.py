@@ -80,18 +80,18 @@ while game_running:
             if event.key == K_ESCAPE:
                 game_running = False
             if event.key == K_LEFT:
-                ship.h_velocity = -1
+                ship.h_velocity += -1
             if event.key == K_RIGHT:
-                ship.h_velocity = 1
+                ship.h_velocity += 1
             if event.key == K_SPACE:
                 new_bullet = Bullet(ship.sprite.rect.x, ship.sprite.rect.y-20)
                 bullets.append(new_bullet)
                 friendly_group.add(new_bullet.sprite)
         if event.type == KEYUP:
             if event.key == K_LEFT:
-                ship.h_velocity = 0
+                ship.h_velocity -= -1
             if event.key == K_RIGHT:
-                ship.h_velocity = 0
+                ship.h_velocity -= 1
 
     if randint(1,150) == 1:
         rand_x_pos = randint(0, screen.get_width())

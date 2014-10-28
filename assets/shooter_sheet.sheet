@@ -1,0 +1,10 @@
+{
+    "image_file": "assets/sprite_sheet.png",
+    "sub_rects": {
+            "ship": [0,68,34,34],
+        "star_y_1": [102,136,7,7],
+        "star_y_2": [136,136,34,34],
+        "star_y_3": [170,136,34,34],
+          "bullet": [0,204,34,34]
+    }
+}
