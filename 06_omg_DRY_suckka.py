@@ -9,11 +9,9 @@ from pygame.locals import *
 from spritesheet import SpriteSheet
 
 pygame.init()
-screen = pygame.display.set_mode((700, 800))
+screen = pygame.display.set_mode((500, 600))
 
 sprite_sheet = SpriteSheet('assets/shooter_sheet.sheet')
-
-
 
 
 class Bullet(object):
@@ -29,8 +27,9 @@ class Bullet(object):
         self.sprite.rect.y -= 1 * delta_time
         self.last_time = current_time
 
+
 class Star(object):
-    def __init__(self, start_x, speed=1):
+    def __init__(self, start_x, speed):
         self.sprite = sprite_sheet.new_sprite('star_y_{}'.format(randint(1,3)))
         self.sprite.rect.x = start_x
         self.sprite.rect.y = 0
@@ -44,6 +43,7 @@ class Star(object):
         self.y += ((self.speed) * delta_time) * 0.035
         self.sprite.rect.y = self.y
         self.last_time = current_time
+
 
 class Ship(object):
     def __init__(self, start_x, start_y):
@@ -68,12 +68,11 @@ bullets = []
 stars = []
 
 background_group = pygame.sprite.RenderUpdates()
-friendly_group = pygame.sprite.RenderUpdates()
 
+friendly_group = pygame.sprite.RenderUpdates()
 friendly_group.add(ship.sprite)
 
 game_running = True
-
 while game_running:
     for event in pygame.event.get():
         if event.type == KEYDOWN:
