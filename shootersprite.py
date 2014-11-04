@@ -14,11 +14,9 @@ class ShooterSprite(pygame.sprite.Sprite):
         self.x += (self.vel_x * delta_time)
         self.y += (self.vel_y * delta_time)
         
-    
     def update(self):
         current_time = pygame.time.get_ticks()
         delta_time = (current_time - self.last_time)
-        #print delta_time, delta_time  * 0.001
         self.do_physics(delta_time)
         self.last_time = current_time
     

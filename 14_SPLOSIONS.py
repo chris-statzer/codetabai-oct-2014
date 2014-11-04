@@ -11,7 +11,7 @@ star_surface = sprite_sheet.new_surface('star_y_1')
 ship_surface = sprite_sheet.new_surface('ship')
 bullet_surface = sprite_sheet.new_surface('bullet')
 enemy_surface = sprite_sheet.new_surface('enemy_1')
-explode_surface = sprite_sheet.new_surface('explode')
+explode_surface = sprite_sheet.new_surface('explode_1')
 
 
 class ShipSprite(ShooterSprite):
