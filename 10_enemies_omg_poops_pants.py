@@ -128,7 +128,6 @@ while game_running:
         enemy_x_location = randint(0,screen.get_width())
         new_enemy = Enemy(enemy_surface, enemy_speed, enemy_x_location)
         enemy_group.add(new_enemy)
-        print 'new enemy'
                 
     screen.fill((0,0,0))
     background_group.update()

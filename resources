@@ -1,0 +1,31 @@
+
+My name is Chris Statzer
+
+Contact info:
+* skype: chris.statzer
+* email: chris.statzer@gmail.com
+* g+: https://plus.google.com/u/0/+ChrisStatzer
+
+
+Article on game timesteps:
+http://gafferongames.com/game-physics/fix-your-timestep/
+
+A cool python game programming competition:
+https://www.pyweek.org/
+
+
+Things to add to your game:
+* Lives
+* Powerups
+* Enemies shooting
+* Homing missiles
+* Give sprites a reference to the sprite manager so they can add their own
+  sprites to the groups (for example a ship adding its own bullet)
+* Give sprites a 'collide' method of their own that you can call
+  on a collision to do some more fine grained actions.
+* extend the getters/setters to allow a .children property so you can have 
+  groups of sprites that move together (like engine animation or particles
+  on the engines)
+* A menu system for starting and stopping the gamestate and pause
+* Online high-score reporting
+

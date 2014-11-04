@@ -37,6 +37,7 @@ class BulletSprite(ShooterSprite):
         if self.y <= 0:
             self.kill()
 
+
 class EnemySprite(ShooterSprite):
     def __init__(self, surface, start_x, vel_y):
         ShooterSprite.__init__(self, surface, start_x, 0, 0, vel_y)
@@ -88,7 +89,7 @@ while game_running:
         new_star = StarSprite(star_surface, star_x_location, star_speed)
         background_group.add(new_star)
 
-    if randint(0,2000) == 1:
+    if randint(0,1000) == 1:
         enemy_speed = uniform(0.2, 0.5)
         enemy_x_location = randint(0,screen.get_width())
         new_enemy = EnemySprite(enemy_surface, enemy_x_location, enemy_speed)

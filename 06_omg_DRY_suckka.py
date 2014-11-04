@@ -1,6 +1,14 @@
-# I wont go over the things covered in the last section. If something here is
-# not covered by a comment look back a step.
+"""
 
+
+
+
+This example NO LONGER WORKS because of changes to spritesheet
+
+
+
+
+"""
 from random import randint
 
 import pygame

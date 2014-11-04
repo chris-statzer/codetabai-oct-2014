@@ -22,8 +22,7 @@ ship_sprite_area = (0*sprite_width, 2*sprite_height,
 
 # Just like before we are gonna calculate a sub rectangle for the bullet sprite.
 # it is on the 3rd row and the 3rd column. (remember ranges start at 0!!!)
-bullet_sprite_area = (2*sprite_width, 2*sprite_height,
-                      sprite_width-4, sprite_height)
+bullet_sprite_area = (0,204,13,22)
 
 
 # Here is our first exposure to the python class
