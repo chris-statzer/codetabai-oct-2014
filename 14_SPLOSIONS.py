@@ -37,7 +37,7 @@ class BulletSprite(ShooterSprite):
         ShooterSprite.update(self)
         if self.y <= 0:
             self.kill()
-            print "killed sprite"
+
 
 class EnemySprite(ShooterSprite):
     def __init__(self, surface, start_x, vel_y):
@@ -47,6 +47,7 @@ class EnemySprite(ShooterSprite):
         ShooterSprite.update(self)
         if self.y >= 600:
             self.kill()
+
 
 class ExplodeSprite(ShooterSprite):
     def __init__(self, surface, start_x, start_y):

@@ -45,16 +45,15 @@ class EnemySprite(ShooterSprite):
 class PingPongEnemySprite(EnemySprite):
     def __init__(self, surface, start_x, vel_y, width):
         EnemySprite.__init__(self, surface, start_x, vel_y)
-        self.vel_x = uniform(-0.1, 0.1)
+        self.vel_x = uniform(-0.4, 0.4)
         self.screen_width = width
         
     def update(self):
         EnemySprite.update(self)
-        if self.x >= self.screen_width:
-            self.vel_x = -0.1
+        if self.x >= self.screen_width - 34:
+            self.vel_x = -0.4
         if self.x <= 0:
-            self.vel_x = 0.1
-        
+            self.vel_x = 0.4
         
 
 class ExplodeSprite(ShooterSprite):
@@ -75,7 +74,7 @@ class SpriteManager(object):
     def __init__(self, sheet_json_file):
         self.sheet = SpriteSheet(sheet_json_file)
         self.groups = {}
-        for g in ['background', 'friendly', 'enemy', 'particle']:
+        for g in ['background', 'friendly', 'enemy', 'particle', 'ui']:
             self.groups[g] = pygame.sprite.RenderUpdates()
         self.screen = pygame.display.get_surface()
         
@@ -86,8 +85,7 @@ class SpriteManager(object):
         new_star = StarSprite(star_surface, star_x_location, star_speed)
         self.groups['background'].add(new_star)
         return new_star
-        
-        
+                
     def add_ship(self):
         ship_surface = self.sheet.new_surface('ship')
         new_ship = ShipSprite(ship_surface, 
@@ -116,7 +114,8 @@ class SpriteManager(object):
         return new_enemy
             
     def add_explosion(self, start_x, start_y):
-        explode_surface = self.sheet.new_surface('explode')
+        explode_image = 'explode_{}'.format(randint(1,2))
+        explode_surface = self.sheet.new_surface(explode_image)
         new_explode = ExplodeSprite(explode_surface, start_x, start_y)
         self.groups['particle'].add(new_explode)
         return new_explode

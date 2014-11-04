@@ -12,8 +12,8 @@ sprite_mgr = SpriteManager('assets/shooter_sheet.sheet')
 shoot_snd = pygame.mixer.Sound('assets/sounds/laser2.ogg')
 explode_snd = pygame.mixer.Sound('assets/sounds/explosion2.ogg')
 
-shoot_snd.set_volume(0.2)
-explode_snd.set_volume(0.2)
+shoot_snd.set_volume(0.1)
+explode_snd.set_volume(0.1)
 
 ship = sprite_mgr.add_ship()
 
@@ -61,7 +61,7 @@ while game_running:
             bullet_hit_list += bullet_hit
             bullet.kill()
             explode_snd.play()
-            for n in range(1,200):
+            for n in range(1,100):
                 sprite_mgr.add_explosion(bullet.x, bullet.y)
 
     for g in groups:
