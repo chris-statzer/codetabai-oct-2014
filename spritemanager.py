@@ -30,7 +30,7 @@ class BulletSprite(ShooterSprite):
         ShooterSprite.update(self)
         if self.y <= 0:
             self.kill()
-            print "killed sprite"
+
 
 class EnemySprite(ShooterSprite):
     def __init__(self, surface, start_x, vel_y):
@@ -40,6 +40,22 @@ class EnemySprite(ShooterSprite):
         ShooterSprite.update(self)
         if self.y >= 600:
             self.kill()
+
+
+class PingPongEnemySprite(EnemySprite):
+    def __init__(self, surface, start_x, vel_y, width):
+        EnemySprite.__init__(self, surface, start_x, vel_y)
+        self.vel_x = uniform(-0.1, 0.1)
+        self.screen_width = width
+        
+    def update(self):
+        EnemySprite.update(self)
+        if self.x >= self.screen_width:
+            self.vel_x = -0.1
+        if self.x <= 0:
+            self.vel_x = 0.1
+        
+        
 
 class ExplodeSprite(ShooterSprite):
     def __init__(self, surface, start_x, start_y):
@@ -88,10 +104,14 @@ class SpriteManager(object):
         return new_bullet
                 
     def add_random_enemy(self):
-        enemy_surface = self.sheet.new_surface('enemy_1')
         enemy_speed = uniform(0.2, 0.5)
         enemy_x_location = randint(0, self.screen.get_width())
-        new_enemy = EnemySprite(enemy_surface, enemy_x_location, enemy_speed)
+        if randint(1,2) == 1:
+            enemy_surface = self.sheet.new_surface('enemy_1')
+            new_enemy = EnemySprite(enemy_surface, enemy_x_location, enemy_speed)
+        else:
+            enemy_surface = self.sheet.new_surface('enemy_2')
+            new_enemy = PingPongEnemySprite(enemy_surface, enemy_x_location, enemy_speed, self.screen.get_width())
         self.groups['enemy'].add(new_enemy)
         return new_enemy
             
@@ -100,4 +120,5 @@ class SpriteManager(object):
         new_explode = ExplodeSprite(explode_surface, start_x, start_y)
         self.groups['particle'].add(new_explode)
         return new_explode
-           
+
+
