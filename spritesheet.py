@@ -1,6 +1,7 @@
 import json
 
 import pygame
+from pygame.locals import *
 
 class SpriteSheet(object):
     def __init__(self, json_file):
@@ -21,7 +22,8 @@ class SpriteSheet(object):
 
     def new_surface(self, sprite_key):
         sprite_area = self._sub_rects[sprite_key]
-        new_surface = pygame.surface.Surface([sprite_area[2], sprite_area[3]])
+        new_surface = pygame.surface.Surface([sprite_area[2], sprite_area[3]], SRCALPHA)
+        new_surface.fill((0,0,0,0))
         new_surface.blit(self._sheet_surface, (0,0,0,0), sprite_area)
         return new_surface
 
